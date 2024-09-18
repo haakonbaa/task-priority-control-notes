@@ -1,0 +1,71 @@
+\section{Mathematics}
+
+\subsection{KKT-Conditions}
+Consider the following optimization problem
+\begin{equation}
+\begin{aligned}
+	\min f(\bm x) \\
+	\textrm{s.t. } \bm{g}(\bm x) \leq \bm 0 \\
+	\textrm{s.t. } \bm{h}(\bm x) = \bm 0 
+\end{aligned}
+\label{eq:min_prob}
+\end{equation}
+
+Define
+\begin{align}
+	L(\bm x, \bm \mu, \bm \lambda) = f(\bm x) + \bm{\mu}^T \bm{g}(\bm{x}) + \bm{\lambda}^T\bm{h}(\bm x)
+\end{align}
+
+Suppose $\bm{x}^*$ is a solution to \autoref{eq:min_prob}, then the following holds
+\begin{align}
+	\partial_x f(\bm{x}^*) &= \bm{0}^T & &\textrm{stationarity} \\
+	\bm{g}(\bm{x}^*) &\leq \bm 0 & &\textrm{primal feasibility}\\
+	\bm{g}(\bm{x}^*) &= \bm 0 & &\textrm{primal feasibility} \\
+	\bm\mu &\geq \bm 0 & &\textrm{dual feasibility} \\
+	\bm{\mu}^T \bm{g}(\bm{x}^*) &= 0 & &\textrm{complementary slackness}
+\end{align}
+
+\subsection{Generalized inverse}
+Consider a "fat" matrix $J$ with full row rank. Let $A$ be a symmetric positive definite matrix. The solution to
+\begin{equation}
+\begin{aligned}
+	\min_{\bm x} \bm{x}^T A \bm{x} \\
+	\textrm{s.t. } \bm y = J \bm x
+\end{aligned}
+\end{equation}
+is
+\begin{align}
+	\bm x = A^{-1} J^T\left(J A^{-1} J^T\right)^{-1} y
+\end{align}
+Proof:
+Using the KKT conditions
+\begin{align}
+&\begin{cases}
+	A\bm x - J^T \lambda = \bm 0 \iff x = A^{-1}J^T \bm \lambda \\
+	\bm y - J \bm x = \bm 0
+\end{cases} \\
+&\begin{cases}
+	A\bm x - J^T \lambda = \bm 0 \\
+	\bm y - J A^{-1}J^T \bm \lambda = \bm 0 \iff \bm \lambda = \left(J A^{-1} J^T\right)^{-1} \bm y
+\end{cases} \\
+&\begin{cases}
+	A\bm x - J^T \left(J A^{-1} J^T\right)^{-1} = \bm 0 \iff \bm x = A^{-1} J^T\left(J A^{-1} J^T\right)^{-1} \bm y \\
+	\bm \lambda = \left(J A^{-1} J^T\right)^{-1}
+\end{cases} \\
+&\begin{cases}
+	\bm x = A^{-1} J^T\left(J A^{-1} J^T\right)^{-1} \bm y \\
+	\bm \lambda = \left(J A^{-1} J^T\right)^{-1}
+\end{cases}
+\end{align}
+
+\subsection{Solution to under-determined system}
+consider the "fat" full row rank matrix $A$. The general solution of 
+\begin{align}
+	\dot r = J(\theta) \dot\theta
+\end{align}
+is \cite{nakamura1987}
+\begin{align}
+	\dot \theta = J^+ \dot r + \left(\mathcal{I} - J^+J\right) y
+\end{align}
+for some arbitary vector y. Here, $\mathcal{I}-J^+J$ is the projection on to the nullspace of $J$ operator.
+

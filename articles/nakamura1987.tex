@@ -1,3 +1,20 @@
 \section{1987 Nakamura | Task-Priority Based Redundancy Control of Robot Manipulators}
 
 \cite{nakamura1987} \fullcite{nakamura1987}
+
+\subsection{abstract}
+Nakamura et al describes a scheme for control of reduntant manipulators. Tasks are defined with ordered priority and controll authority is given to tasks with the highest priority. Results are shown in simulation on a three-jointed robot mainupulator with two tasks, and on a physical 6-DOF manipulator.
+
+\subsection{summary}
+
+Let $\theta$ be a vector of joint coordinates. Define a task as
+\begin{align}
+	\bm r_i &= \bm f_i(\bm \theta) \\
+	\implies& \bm{\dot{r}_i} = J_i(\bm \theta) \bm{\dot \theta} \label{eq:task_dot}\\
+	\implies& \bm{\ddot{r}_i} = J_i(\bm \theta) \bm{\ddot \theta} + \dot{J}_i(\bm \theta) \bm{\dot \theta} \label{eq:task_ddot}
+\end{align}
+
+Solutions $\bm{\dot\theta}$ and $\bm{\ddot\theta}$ to \autoref{eq:task_dot} and \autoref{eq:task_ddot} satisfy
+
+
+
