@@ -1,0 +1,71 @@
+\section{Chiaverini1997 | Singularity-robust task-priority redundancy resolution for real-time kinematic control of robot
+manipulators}
+
+\cite{chiaverini1997} \fullcite{chiaverini1997}
+
+\subsection{Abstract}
+
+In \cite{chiaverini1997} several ways of dealing with kinematic and algorithmic singularities are presented. A new resolution thechnique is developed aimed at overcomming the effects of algorithmic singularities. The computational aspects of the method is discussed and a controller is applied to a seven-degree-of-freedom manipulator to demonstrate its effectiveness.
+
+\subsection{Summary}
+
+Consider the task
+\begin{align}
+    \dot x_E = J_E(q) \dot q
+\end{align}
+Solving for $q$ we get
+\begin{align}
+    \dot q = J_E^+ \dot x_E + (\II - J_E^+J_E)\dot q_0
+\end{align}
+for some arbitrary $\dot q_0$. Selecting the value of $\dot q_0$ that minimizes
+\begin{align}
+    \dot x_C - J_C \dot q
+\end{align}
+we get
+\begin{align}
+    \dot q = J_E^+ \dot x_E + \left(J_C(\II - J_E^+J_E)\right)^+ \left(\dot x_C - J_C J_E^+ \dot x_E\right) \label{eq:min_sol}
+\end{align}
+Note that
+\begin{align}
+    \dot q = J_E^+ \dot x_E + \left(\II - J_E^+J_E\right)J_C^+ \dot x_C \label{eq:nice_sol}
+\end{align}
+\autoref{eq:nice_sol} reduces to \autoref{eq:min_sol} when the constraint task is compatible with the end-effector task. For optimization purpuses, note that \autoref{eq:nice_sol} can be rewritten as
+\begin{align}
+    \dot q = J_E^+\left(\dot x_E - J_E \dot q_0\right) + J_C^+ \dot x_C
+\end{align}
+When $J_C$ and $J_E$ are close to being rank defficient, the pseudo inverse tends to be ill conditioned and joint belocity discontinuities occure. To deal with this problem the author introduces more numerically stable alternatives to the pseudo inverse. Let $J$ be an arbitrary matrix with singular value decomposition
+\begin{align}
+    J = U \Sigma V^T = \Sigma_{i=1}^r \sigma_i u_i v_i^T
+\end{align}
+note that if $J$ is full rank, the pseudo inverse can be written as
+\begin{align}
+    J = \sum_{i=1}^r \frac{1}{\sigma_i} v_i u_i^T
+\end{align}
+\subsubsection{damped least-squares inverse}
+The damped least-squares inverse is defined as
+\begin{align}
+    J^{\ast}= \sum_{i=1}^r \frac{\sigma_i}{\sigma_i^2 + \lambda^2} v_i u_i^T
+\end{align}
+It avoids illconditioned matrices and will be well defined even at singular points. The cost is that away from singular points the lambda terms will affect the velocity components. To adress this the author introduces the variable damped least-squares inverse.
+
+\subsubsection{Variable Damped least-squares inverse}
+
+The variable damped least-squares inverse is defined as the least-squares inverse, but the damping factor $\lambda$ is $0$ far from singularities and some other value close to the singularities. The author suggests the following damping $\lambda$
+\begin{align}
+    \lambda^2 &= 
+    \begin{cases}
+        0 & \sigma_m \geq \epsilon \\ 
+        \left(1-\left(\frac{\sigma_m}{\epsilon}\right)\right)\lambda_{max}^2 & \sigma_m < \epsilon 
+    \end{cases}
+\end{align}
+resulting in (for one singular value equal to zero)
+\begin{align}
+    J^{\circ} = \frac{\sigma_m}{\sigma_m^2 + \lambda^2}v_m u_m^T + \sum_{i=1}^{m-1} \frac{1}{\sigma}v_i u_i^T
+\end{align}
+
+\subsubsection{Low Isotropic Variable Damped Least-squares Inverse}
+choosing $\beta^2 << \lambda^2$, the low isitropic variable damped least-squares inverse becomes (for one singular value equal to zero.)
+\begin{align}
+    J^{\Diamond} = \frac{\sigma_m}{\sigma_m^2 + \beta^2 + \lambda^2}v_i u_i^T +\sum_{i=1}^{m-1}\frac{\sigma_i}{\sigma_i^2+\beta^2} v_i u_i^T
+\end{align}
+
