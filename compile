@@ -2,8 +2,10 @@
 set -o errexit
 set -o xtrace
 
+cd ./src
+
 PROJECT='main'
-BUILD_DIR='./build'
+BUILD_DIR='../build'
 BIBER_ARGS=(--output-directory "$BUILD_DIR")
 LATEX_ARGS=(-output-directory="$BUILD_DIR" -interaction=errorstopmode)
 
@@ -13,3 +15,4 @@ biber "${BIBER_ARGS[@]}" "$PROJECT"
 latex "${LATEX_ARGS[@]}" "$PROJECT"
 pdflatex "${LATEX_ARGS[@]}" "$PROJECT"
 
+cd ..
