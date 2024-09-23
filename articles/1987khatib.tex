@@ -3,3 +3,30 @@
 \cite{khatib1987} \fullcite{khatib1987}
 
 \subsection{Summary}
+
+Consider the equations of motions for a manipulator in joint space.
+\begin{align}
+    A(q)\ddot q + b(q, \dot q) + g(q) = \Gamma
+\end{align}
+
+Let $x$ denote the position of the end effector of a manipulator, then
+\begin{align}
+    \ddot x = J(q) \ddot q + h(q, \dot q)
+\end{align}
+
+Applying the joint space generalized forces $\Gamma = J^T F$,the equations of
+motion of the end effector can be written as
+\begin{align}
+    A(q)\ddot q + b(q, \dot q) + g(q) &= J(q)^T F \\
+    \ddot q + A^{-1}(q) b(q, \dot q) + A^{-1}(q) g(q) &= A^{-1}(q) J(q)^T F \\
+    J(q) \ddot q + h + J(q) A^{-1}(q) b(q, \dot q) + J(q) A^{-1}(q) g(q) &= J(q) A^{-1}(q) J(q)^T F + h(q, \dot q)\\
+    \ddot x + J(q) A^{-1}(q) b(q, \dot q) + J(q) A^{-1}(q) g(q) &= J(q) A^{-1}(q) J(q)^T F + h(q, \dot q)\\
+    \Lambda_r(q) \ddot x + \mu_r(q, \dot q) + p_r(q) &= F
+\end{align}
+
+Having a desired force $F_m^*$ accting on the end-effector, we apply the
+joint-space generalized forces
+\begin{align}
+    \Gamma = J^T(q) \Lambda_r(q) F_m^* + \bar{b}_r(q, \dot q) + g(q)
+\end{align}
+This is the joint space generalized
