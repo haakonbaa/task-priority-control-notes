@@ -12,10 +12,47 @@ Consider the joint space dynamics of the robot
 \end{align}
 And a task $x_t$ assosiated with it a jacobian
 \begin{align}
-    \dot x_t = J_t(q)\dot q
+    \dot x_t &= J_t(q)\dot q & \dot x_p &= J_p(q)\dot q\\
+    \ddot x_t &= J_t(q) \ddot q + \dot{J}_t(q) \dot q & \ddot x_p &= J_p(q) \ddot q + \dot{J}_p(q) \dot q
 \end{align}
-The dynamically consistent generalized inverse \cite{khatib1987} is
+We define a dynamically consistent generalized inverse \cite{khatib1987} of a matrix
 \begin{align}
-    \bar{J_t}(q) = A^{-1} J_t^T (J_t A^{-1} J_t^T)^{-1}
+    \bar\cdot : X \mapsto A^{-1}X^T\left(X A^{-1} X^T\right)^{-1}
+\end{align}
+We define
+\begin{align}
+    J_{p|t} &= J_p N_t & N_t &= \II - \bar{J}_t J & \Gamma &= J_t^T F_t + (J_p N_t)^T F_p
+\end{align}
+Projecting the robot dynamics into the space associated with the tasks we get.
+\begin{align}
+    \bar{J}_t^T\left[A \ddot q + b + g = \Gamma \right] \implies
+    \Lambda_t(x_t) \ddot x_t + \mu_t(x_t, \dot x_t) + p_t(x_t) = F_t \\
+    \bar{J}_{p|t}^T\left[A \ddot q + b + g = \Gamma \right] \implies
+    \Lambda_{p|t} \ddot x_{p|t} + \mu_{p|t} + p_{p|t} = F_{p|t}
+\end{align}
+where
+\begin{align}
+    \Lambda_x = \left(J_x A^{-1} J_x^T\right)^{-1}
+\end{align}
+\textcolor{red}{How is it possible to get an equation determining $\ddot x$
+without including $q$?}
+Choosing
+\begin{align}
+    F_t &= \hat \Lambda_t F_t^* + \hat{\mu}_t + \hat{p}_t \\
+    F_{p|t} &= \hat \Lambda_{p|t} \left(F_{p}^* - \ddot{x}_{\overline{p|t}}\right) + \hat{\mu}_{p|t} + \hat{p}_{p|t} \\
+    \ddot{x}_{\overline{p|t}} &:= \ddot{x}_p - \ddot{x}_{p|t}
+\end{align}
+Ensures that
+\begin{align}
+    \ddot x_t = F_t^*
+\end{align}
+and
+\begin{align}
+    \ddot x_p = F_p^*
+\end{align}
+if possible. In the case where $J_{p|t} A^{-1} J_{p|t}$ is singular, implying
+that $\Lambda_{p|t}$ does not exist, we instead take the Moore Penrose inverse 
+\begin{align}
+    F_{p|t} &= \left(J_{p|t} A^{-1} J_{p|t}^T\right)^{+} \left(F_{p}^* - \ddot{x}_{\overline{p|t}}\right) + \hat{\mu}_{p|t} + \hat{p}_{p|t} \\
 \end{align}
 
