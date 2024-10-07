@@ -1,7 +1,7 @@
 # Task-Priority Control Notes
 
-A summary of works regarding task-priority control and underwater vehicle-manipulator
-systems.
+A summary of works regarding task-priority control and underwater
+vehicle-manipulator systems.
 
 View and Download: [main.pdf](https://raw.githubusercontent.com/haakonbaa/task-priority-control-notes/main/build/main.pdf) <br>
 View in browser:   [main.pdf](https://github.com/haakonbaa/task-priority-control-notes/blob/main/build/main.pdf)
@@ -10,26 +10,27 @@ View in browser:   [main.pdf](https://github.com/haakonbaa/task-priority-control
 
 | year | Author                        | r | s | f | w | Title                 |
 |------|-------------------------------|---|---|---|---|-----------------------|
-| 1969 | Whitney                       |   | x |   |   | Resolved Motion Rate Control of Manipulators and Human Prostheses |
+| 1969 | Whitney                       |   | x | x |   | Resolved Motion Rate Control of Manipulators and Human Prostheses |
 | 1981 | Hanafusa, Yoshikawa, Nakamura |   | x | x |   | Analysis and control of articulated robot arms with redundancy |
 | 1987 | Nakamura et al.               |   | x | x |   | Task Priority Based Redundancy Control of Robot Manipulators |
 | 1987 | Khatib                        | x | x |   |   | A unified approach for motion and force control of robot manipulators |
 | 1991 | Siciliano et al.              | x | x |   |   | A General Framework For Managing Multiple Tasks in Highly Reduntant Robotic Systems |
 | 1997 | Chiaverini                    | x | x | x | x | Singularity-robust task-priority redundancy resolution. |
 | 2004 | Khatib                        | x | x | x | x | Whole-Body Dynamic Behavior and Control of Human-like Robots |
-| 2005 | Sentis, Khatib                | x | x |   |   | Synthesis of whole-body behaviours through hierarchical control of behavioural primitives
-| 2009 | Antonelli                     | x |   |   |   | Stability Analysis for Prioritized Closed-Loop Inv
-| 2015 | Dietrich                      | x |   |   |   | An overview of null space projections for reduntant, torque-controlled robots
-| 2018 | Antonelli                     | x |   |   |   | Modeling Errors Analysis in Inverse Dynamics Appro
-| 2020 | Basso                         |   | x |   |   | Task-Priority Control of Redundant Robotic Systems using CL- and CB-Fs based QPs
-| 2022 | Iversflaten                   | x |   |   |   | Kinematic and Dynamic Control of Cooperating Under.pdf
-| 2023 | Iversflaten                   | x |   |   |   | Task-Priority Operational Space Control for Vehicle.pdf
-| 2023 | Iversflaten                   | x |   |   |   | MSc. - Robust Task-Priority Control of Underwater Vehicle-Manipulator Systems
-| 2021 | Sæbø                          | x |   |   |   | Project Thesis
-| 2023 | Sæbø                          | x |   |   |   | MSc. Null Space-Based Control and Simulation of Vehicle-Manipulator Systems
-| 2019 | Basso                         | x |   |   |   | Project Thesis - Set-Based Task Priority Control for Articulated Intervention AUVs
-| 2018 | Schmidt-Didlaukies            | x | x |   |   | Modeling of Underwater Snake Robots, draft
-| 2018 | Schmidt-Didlaukies            | x | x |   |   | Modeling of Articulated Underwater Robots for Simulation and Control
+| 2005 | Sentis, Khatib                | x | x |   |   | Synthesis of whole-body behaviours through hierarchical control of behavioural primitives |
+| 2005 | Nakanishi et al.              |   | x | x |   | Comparative Experiments on Task Space Control with Redundancy Resolution |
+| 2009 | Antonelli                     | x | x | x |   | Stability Analysis for Prioritized Closed-Loop Inv |
+| 2015 | Dietrich                      | x |   |   |   | An overview of null space projections for reduntant, torque-controlled robots |
+| 2018 | Antonelli                     | x |   |   |   | Modeling Errors Analysis in Inverse Dynamics Appro |
+| 2020 | Basso                         |   | x |   |   | Task-Priority Control of Redundant Robotic Systems using CL- and CB-Fs based QPs |
+| 2022 | Iversflaten                   | x |   |   |   | Kinematic and Dynamic Control of Cooperating Under |
+| 2023 | Iversflaten                   | x |   |   |   | Task-Priority Operational Space Control for Vehicle | 
+| 2023 | Iversflaten                   | x |   |   |   | MSc. - Robust Task-Priority Control of Underwater Vehicle-Manipulator Systems |
+| 2021 | Sæbø                          | x |   |   |   | Project Thesis |
+| 2023 | Sæbø                          | x |   |   |   | MSc. Null Space-Based Control and Simulation of Vehicle-Manipulator Systems |
+| 2019 | Basso                         | x |   |   |   | Project Thesis - Set-Based Task Priority Control for Articulated Intervention AUVs |
+| 2018 | Schmidt-Didlaukies            | x | x |   |   | Modeling of Underwater Snake Robots, draft |
+| 2018 | Schmidt-Didlaukies            | x | x |   |   | Modeling of Articulated Underwater Robots for Simulation and Control |
 
 **r** *reccomended*,
 **s** *started reading*,
