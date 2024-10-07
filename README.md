@@ -10,12 +10,13 @@ View in browser:   [main.pdf](https://github.com/haakonbaa/task-priority-control
 
 | year | Author                        | r | s | f | w | Title                 |
 |------|-------------------------------|---|---|---|---|-----------------------|
+| 1969 | Whitney                       |   | x |   |   | Resolved Motion Rate Control of Manipulators and Human Prostheses |
 | 1981 | Hanafusa, Yoshikawa, Nakamura |   | x | x |   | Analysis and control of articulated robot arms with redundancy |
-| 1987 | Nakamura et al.               |   | x | x |   | Task Priority Based Redundancy Control of Robot Manipulators
-| 1987 | Khatib                        | x | x |   |   | A unified approach for motion and force control of robot manipulators
-| 1991 | Siciliano et al.              | x | x |   |   | A General Framework For Managing Multiple Tasks in Highly Reduntant Robotic Systems
-| 1997 | Chiaverini                    | x | x | x | x | Singularity-robust task-priority redundancy resolution.
-| 2004 | Khatib                        | x | x |   |   | Whole-Body Dynamic Behavior and Control of Human-like Robots
+| 1987 | Nakamura et al.               |   | x | x |   | Task Priority Based Redundancy Control of Robot Manipulators |
+| 1987 | Khatib                        | x | x |   |   | A unified approach for motion and force control of robot manipulators |
+| 1991 | Siciliano et al.              | x | x |   |   | A General Framework For Managing Multiple Tasks in Highly Reduntant Robotic Systems |
+| 1997 | Chiaverini                    | x | x | x | x | Singularity-robust task-priority redundancy resolution. |
+| 2004 | Khatib                        | x | x | x | x | Whole-Body Dynamic Behavior and Control of Human-like Robots |
 | 2005 | Sentis, Khatib                | x | x |   |   | Synthesis of whole-body behaviours through hierarchical control of behavioural primitives
 | 2009 | Antonelli                     | x |   |   |   | Stability Analysis for Prioritized Closed-Loop Inv
 | 2015 | Dietrich                      | x |   |   |   | An overview of null space projections for reduntant, torque-controlled robots
